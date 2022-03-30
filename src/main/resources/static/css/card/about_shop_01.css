@@ -1,0 +1,13 @@
+.about-shop-card-container{
+    padding: 2vh 10px;
+}
+
+.about-shop-image-container{
+
+}
+.about-shop-image {
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+    border-radius: 6px;
+}

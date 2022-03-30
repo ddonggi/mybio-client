@@ -1,0 +1,60 @@
+/* 카드의 레이아웃 설정 */
+.mini-card-container{
+    min-height: 24vh;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2vh 10px;
+    position: relative;
+}
+
+.profile-image-container{
+    width: 30vw;
+    height: 30vw;
+}
+
+.profile-image-container > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.mini-card-name-container {
+    position: absolute;
+    left: 35vw;
+    display: flex;
+}
+    .mini-card-korean-name-container{
+
+    }
+    .mini-card-english-name-container{
+
+    }
+.mini-card-introduce-container {
+    position: absolute;
+    left: 35vw;
+    top: 7vh;
+}
+
+    .mini-card-greetings-container{
+
+    }
+    .mini-card-introduction-container{
+
+    }
+
+
+.mini-card-links-container{
+    display: flex;
+    position: absolute;
+    left: 35vw;
+    top: 15vh;
+}
+
+    .card-link{
+
+    }
+
+        .card-link img{
+
+        }

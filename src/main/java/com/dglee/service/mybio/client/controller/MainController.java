@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Map;
 
@@ -34,6 +35,11 @@ public class MainController {
         logger.info(" <<<<< end intro");
         return "intro"; //인트로 페이지
     }
+    @RequestMapping("/favicon.ico")
+    public String favicon(){
+        return "forward:/resources/static/img/favicon.ico";
+    }
+
     @GetMapping("/test/{userId}")
     public String test(){
         logger.info("test page >>");
@@ -67,10 +73,8 @@ public class MainController {
         /*
         * 페이지 테스트용
         * */
-        if(userId.equals("wsoh")){
-            return "test/wsoh";
-        }else if(userId.equals("dhkim")){
-            return "members/mainView";
+        if(userId.equals("dglee")){
+            return "dgleeTest";
         }else {
             return "visitor"; //방문자 페이지
         }

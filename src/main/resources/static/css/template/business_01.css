@@ -1,0 +1,50 @@
+/* 전체 적인 컬러, 테마 등 설정 */
+#card-list{
+    display: flex;
+    flex-direction: column;
+    background : wheat;
+    color: white;
+}
+
+/* 카드의 컬러 설정 */
+.mini-card-container{
+
+}
+
+.profile-image-container{
+
+}
+
+.profile-image-container > img {
+
+}
+
+.mini-card-name-container {
+    background: white;
+    border-radius: 6px;
+    color: wheat;
+}
+
+.mini-card-introduce-container {
+
+}
+
+.mini-card-greetings-container{
+
+}
+.mini-card-introduction-container{
+
+}
+
+
+.mini-card-links-container{
+
+}
+
+.card-link{
+
+}
+
+.card-link img{
+
+}

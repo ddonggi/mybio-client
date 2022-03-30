@@ -1,0 +1,48 @@
+/* 전체 적인 컬러, 테마 등 설정 */
+#card-list{
+    display: flex;
+    flex-direction: column;
+    background : #0077b5;
+    color: black;
+}
+
+/* 카드의 컬러 설정 */
+.mini-card-container{
+
+}
+
+.profile-image-container{
+
+}
+
+.profile-image-container > img {
+
+}
+
+.mini-card-name-container {
+
+}
+
+.mini-card-introduce-container {
+
+}
+
+.mini-card-greetings-container{
+
+}
+.mini-card-introduction-container{
+
+}
+
+
+.mini-card-links-container{
+
+}
+
+.card-link{
+
+}
+
+.card-link img{
+
+}
