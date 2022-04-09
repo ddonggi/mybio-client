@@ -15,14 +15,14 @@ let mappingMiniProfileCard = (card) => {
     // append CSS file
     addCardCss(style);
 
-/*    let miniCardHtml = `<div class="mini-card-container ${style}">
-       <div class="mini-card-name-container">
-            <div class="mini-card-korean-name-container">${koreanName}</div>
-            <div class="mini-card-english-name-container">${englishName}</div>
-            <div class="mini-card-introduce-container">${greetings}</div>
-            <div class="mini-card-introduction-container">${introduction}</div>
-            <div class="mini-card-links-container">${links}</div>
-        </div>`;*/
+    /*    let miniCardHtml = `<div class="mini-card-container ${style}">
+           <div class="mini-card-name-container">
+                <div class="mini-card-korean-name-container">${koreanName}</div>
+                <div class="mini-card-english-name-container">${englishName}</div>
+                <div class="mini-card-introduce-container">${greetings}</div>
+                <div class="mini-card-introduction-container">${introduction}</div>
+                <div class="mini-card-links-container">${links}</div>
+            </div>`;*/
 
 
     let miniCard = `<div class="mini-card-container">`;
@@ -51,7 +51,7 @@ let mappingMiniProfileCard = (card) => {
             miniCard += `<div class="mini-card-greetings-container">${greetings}</div>`
         }
         if (introduction) {
-             miniCard += `<div class="mini-card-introduction-container">${introduction}</div>`
+            miniCard += `<div class="mini-card-introduction-container">${introduction}</div>`
         }
         miniCard +=`</div>`;
     }
@@ -88,10 +88,10 @@ let mappingAboutShopCard = (card) => {
     let address =cardData.address;
     let introduction = cardData.introduction;
     let businessHours =cardData.business_hours;
-        let openingHours = businessHours.opening_hours;
-        let holiday = businessHours.holiday;
-        let breakTime = businessHours.break_time;
-        let lastOrder = businessHours.last_order;
+    let openingHours = businessHours.opening_hours;
+    let holiday = businessHours.holiday;
+    let breakTime = businessHours.break_time;
+    let lastOrder = businessHours.last_order;
     let qna = cardData.qna;
     let menuImage =cardData.menu_image;
     let parkingSpace = cardData.parking_space;
@@ -211,7 +211,52 @@ let mappingLinkCard = (card) => {
     return linkCard;
 }
 
+
+/*
+ * {
+ * "address": "서울특별시 서초구 매헌로8길 47",
+ * "enable_map" : "true",
+ * "enable_share": "true"
+ * }
+ * */
 let mappingMapCard = (card) => {
+
+    let style = card.style;
+    let cardData = JSON.parse(card.cardData);
+    let address = cardData.address;
+    let enable_map = cardData.enable_map;
+    let enable_share = cardData.enable_share;
+
+    console.log("map card")
+    addCardCss(style);
+
+    let mapCard = `<div class="map-card-container">`;
+
+    if (address) {
+        console.log("add address", address)
+        mapCard += `<div class="map-card-address-container">`
+        mapCard += `<div>${address}</div>`;
+        mapCard += `</div>`;
+    }
+
+    if (enable_map) {
+        console.log("add map", enable_map)
+        mapCard += `<div class="map-card-map-container">`
+
+        mapCard += `<div id="map" style="width:500px;height:400px;"></div>`;
+        mapCard += `</div>`;
+    }
+
+    if (enable_share) {
+        console.log("add share")
+        mapCard += `<div class="map-card-share-container">`
+        mapCard += `<div>share</div>`;
+        mapCard += `</div>`;
+    }
+
+    return mapCard;
+
+
 }
 
 function cardTest(){
@@ -283,7 +328,7 @@ function cardHandle(cardArray){
     console.log("cardHandle")
 
     let miniCardHtml =
-    ` <img src="hi5_mini_img" alt="배경 이미지" width="200px">
+        ` <img src="hi5_mini_img" alt="배경 이미지" width="200px">
          <div class="data">
              <div class="name">>
                  <div>
@@ -359,7 +404,7 @@ function cardHandle(cardArray){
                 cardHtml = mapCardHtml.replace("{{address}}",cardArray[i].cardData.address);
 
                 //if (cardArray[i].cardData.show_map == False)
-                    //cardHtml = mapCardHtml.replace("mapdress",cardArray[i].cardData.address);
+                //cardHtml = mapCardHtml.replace("mapdress",cardArray[i].cardData.address);
                 //    find class(map).show = None
 
 
@@ -401,4 +446,4 @@ function addCardCss(style){
     document.head.appendChild(link);
 }
 
-export {mappingMiniProfileCard, mappingLinkCard, mappingAboutMeCard, mappingAboutShopCard, cardHandle, cardTest}
+export {mappingMiniProfileCard, mappingAboutMeCard, mappingAboutShopCard, mappingCareerCard, mappingLinkCard, mappingMapCard, cardHandle, cardTest}
