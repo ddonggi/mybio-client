@@ -1,36 +1,34 @@
-import {mappingMiniProfileCard,mappingLinkCard,mappingAboutMeCard,mappingAboutShopCard} from "/js/util/card.js";
+import {mappingMiniProfileCard, mappingAboutMeCard,mappingAboutShopCard, mappingCareerCard, mappingLinkCard, mappingMapCard} from "/js/util/card.js";
 
 async function getCardsInfoByUserId(userId) {
-    let url = 'http://localhost:8081/card/' + userId;
-    // let url = 'https://172.30.1.26:8081/card/' + userId;
-    console.log("url:",url);
+    // option 1. fetch api
+    let url = 'http://localhost:8081/back-end/card/' + userId;
+    console.log("url:", url);
 
     let response = await fetch(url);
-
     if (response.ok) { // HTTP 상태 코드가 200~299일 경우
         // 응답 몬문을 받습니다.
         let json = await response.json();
-        console.log('card json:',json)
+        console.log('card json:', json)
         return json;
     } else {
-        alert("HTTP-Error: " + response.status);
+        console.log("HTTP-Error: " + response.status);
     }
 }
 
 async function getTemplateInfoByUserId(userId) {
-    let url = 'http://localhost:8081/template/' + userId;
-    // let url = 'https://172.30.1.26:8081/template/' + userId;
-    console.log("url:",url);
+    let url = 'http://localhost:8081/back-end/template/' + userId;
+    console.log("url:", url);
 
     let response = await fetch(url);
 
     if (response.ok) { // HTTP 상태 코드가 200~299일 경우
         // 응답 몬문을 받습니다.
         let json = await response.json();
-        console.log('template json:',json)
+        console.log('card json:', json)
         return json;
     } else {
-        alert("HTTP-Error: " + response.status);
+        console.log("HTTP-Error: " + response.status);
     }
 }
 
@@ -58,15 +56,15 @@ function appendCard(card) {
     if(card.type==='mini_profile'){
         document.getElementById("card-list").innerHTML += mappingMiniProfileCard(card);
     }else if(card.type==='about_me'){
-
+        document.getElementById("card-list").innerHTML += mappingAboutMeCard(card);
     }else if(card.type==='about_shop'){
         document.getElementById("card-list").innerHTML += mappingAboutShopCard(card);
     }else if(card.type==='career'){
-
+        document.getElementById("card-list").innerHTML += mappingCareerCard(card);
     }else if(card.type==='link'){
         document.getElementById("card-list").innerHTML += mappingLinkCard(card);
     }else if(card.type==='map'){
-
+        document.getElementById("card-list").innerHTML += mappingMapCard(card);
     }
 }
 
