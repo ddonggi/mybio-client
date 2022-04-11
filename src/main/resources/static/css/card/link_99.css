@@ -1,0 +1,61 @@
+.link-card-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #777799;
+    color: #FFFFFF;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.link-card-links-container {
+    margin: 0 auto;
+}
+
+    .link {
+
+    }
+
+.link-card-contents-links-container {
+
+}
+
+    .link-card-video-links-container {
+
+    }
+
+        /* video link의 썸네일 이미지 */
+        .link-card-video-links-container img {
+            width: 50%;
+            height: 50%;
+            object-fit: cover;
+            margin: 0 auto;
+        }
+
+    .link-card-audio-links-container {
+
+    }
+
+        /* audio link의 썸네일 이미지 */
+        .link-card-audio-links-container img {
+            width: 50%;
+            height: 50%;
+            object-fit: cover;
+            margin: 0 auto;
+        }
+
+.link-card-sns-links-container {
+
+}
+
+    .snsLink {
+
+    }
+
+        /* sns link의 아이콘 */
+        .snsLink img {
+            width: 50%;
+            height: 30%;
+            object-fit: cover;
+            margin: 0 auto;
+        }
