@@ -141,7 +141,14 @@ let mappingAboutShopCard = (card) => {
 }
 
 let mappingCareerCard = (card) => {
+    let style = card.style;
+    let cardData = JSON.parse(card.cardData);
+    let links = cardData.links;
+    let videoLinks = cardData.video_links;
+    let audioLinks = cardData.audio_links;
+    let snsLinks = cardData.sns_links;
 
+    addCardCss(style);
 }
 
 let mappingLinkCard = (card) => {
