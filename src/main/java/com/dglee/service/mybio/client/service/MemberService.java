@@ -25,7 +25,7 @@ public class MemberService {
     public Map<String,String> getUserPageInfo(String userId) {
         Map<String,String> pageInfo = new HashMap<>();
 
-//        ResponseEntity<String> templateResponse = restService.getResponse(TEMPLATE_URL + userId);
+        ResponseEntity<String> templateResponse = restService.getResponse(TEMPLATE_URL + userId);
         ResponseEntity<String> cardResponse = restService.getResponse(CARD_URL + userId);
         String cardList = cardResponse.getBody();
 //        String template = templateResponse.getBody();
