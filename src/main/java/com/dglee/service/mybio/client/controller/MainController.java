@@ -49,7 +49,15 @@ public class MainController {
         logger.info(" <<<<< end intro");
         return "test"; //인트로 페이지
     }
-
+    @GetMapping("/login")
+    public String login(){
+        logger.info("login page >>");
+        //세션 정보 Model에 담아 넘김
+//        httpRequest.getSession();
+//        model.addAttribute("request",httpRequest);
+        logger.info(" <<<<< login");
+        return "login"; //로그인 페이지
+    }
     // 최종 방문자가 보는 페이지
     @GetMapping("/{userId}")
     public String getVisitorPage(@PathVariable String userId, Model model){
