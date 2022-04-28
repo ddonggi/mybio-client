@@ -123,16 +123,16 @@ let mappingAboutShopCard = (card) => {
         if (lastOrder) aboutShopCard += `<div class="about-shop-lastOrder-container">라스트 오더 : ${lastOrder}</div>`;
         aboutShopCard+=`</div>`;
     }
-    if(image){
-        aboutShopCard+=`<div>`;
+    if(qna){
+        aboutShopCard+=`<div class="about-shop-qna-container">`;
         aboutShopCard+=`</div>`;
     }
-    if(image){
-        aboutShopCard+=`<div>`;
+    if(menuImage){
+        aboutShopCard+=`<div class="about-shop-menu-image-container">`;
         aboutShopCard+=`</div>`;
     }
-    if(image){
-        aboutShopCard+=`<div>`;
+    if(parkingSpace){
+        aboutShopCard+=`<div class="about-shop-parking-space-container">`;
         aboutShopCard+=`</div>`;
     }
 
