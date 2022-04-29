@@ -147,8 +147,27 @@ let mappingCareerCard = (card) => {
     let videoLinks = cardData.video_links;
     let audioLinks = cardData.audio_links;
     let snsLinks = cardData.sns_links;
-
     addCardCss(style);
+    let careerCard =
+        `<div class="career-card-container">`;
+
+    if(links){
+        careerCard+=`<div class="about-shop-qna-container">`;
+        careerCard+=`</div>`;
+    }
+
+    if(videoLinks){
+        careerCard+=`<div class="about-shop-menu-image-container">`;
+        careerCard+=`</div>`;
+    }
+
+    if(audioLinks){
+        careerCard+=`<div class="about-shop-parking-space-container">`;
+        careerCard+=`</div>`;
+    }
+
+    careerCard +=`</div>`;
+    return careerCard;
 }
 
 let mappingLinkCard = (card) => {
@@ -280,4 +299,4 @@ function addCardCss(style){
     document.head.appendChild(link);
 }
 
-export {mappingMiniProfileCard, mappingAboutMeCard, mappingAboutShopCard, mappingCareerCard, mappingLinkCard, mappingMapCard, cardHandle, cardTest}
+export {mappingMiniProfileCard, mappingAboutMeCard, mappingAboutShopCard, mappingCareerCard, mappingLinkCard, mappingMapCard, cardTest}
